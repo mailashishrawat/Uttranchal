@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <link rel="stylesheet" href=Css/maincss.css>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="//rawgit.com/angular-ui/angular-google-maps/2.1.5/dist/angular-google-maps.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyA2ouhByoiReSRShjGERs0VY_8hWaaaqBw "></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+<meta name="keywords" content="ng-map,AngularJS,center">
+   <script src=JS/Controller/Map.js></script>
+   <script src=JS/Controller/Geolocation.js>
+   
+   
+   </script>
+   
+<!-- 2556 × 2136*/ -->
+ <style>
+ .maincontainer
+ {
+  background:url(images/tiger2.jpg);
+  
+}
+.angular-google-map-container {
+        height: 200px;
+}
+ .article
+ {
+ margin-right:100px;
+ margin-left:100px;
+ 
+
+border-radius:50px;
+padding:50px;
+
+ background-color: #ffffff;
+ border: 1px solid grey;
+ opacity: 0.6;
+ filter: alpha(opacity=60); /* For IE8 and earlier */
+ color:blue;
+ 
+ }
+ 
+ </style>
+</head>
+<body>
+<div class="maincontainer" ng-app="appMaps" ng-controller="mainCtrl"><!--start of main container-->
+<nav id="nav" class="navbar navbar-inverse navbar-fixed-top" class="navbar" data-target=".navbar"><!--start of nav-->
+   <div class="contianer-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="#carousel">Welcome to Uttarakhand..</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#test">
+          <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           </button>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="test">
+          <ul class="nav navbar-nav">
+             <li class="active"><a href="#sec1">Home</a></li>
+             <li><a href="#sec2">Tour</a></li>
+             <li><a href="#video">Adventure</a></li>
+             <li><a href="#sec4">Gallery</a></li> 
+             <li><a href="#contact">Contact us</a></li> 
+           </ul>
+         </div>
+      </div>
+ </nav><!--end of nav-->
+ 
+  <div class="article" ng-include="'JSON/Jim_Corbett.html'">
+  </div>
+<div >
+
+      
+        <ui-gmap-google-map center="map.center" zoom="map.zoom">
+       <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+        </ui-gmap-marker>
+          <ui-gmap-marker coords="marker1.coords" options="marker1.options" events="marker1.events" idkey="marker.id">
+        </ui-gmap-marker>
+        </ui-gmap-google-map>
+          
+</div>
+<footer class="navbar-fixed-bottom">
+<p>Posted by: Shewani Negi</p>
+  <p>Contact information: <a href="mailto:negi.shewani@gmail.com">
+  negi.shewani@gmail.com</a>.</p>
+</footer>
+</div>
+ 
+
+
+</body>
+</html>
